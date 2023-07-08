@@ -1,6 +1,7 @@
 import React from "react";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import "../css/IntroSection.css";
+import DetailPart from "./DetailPart";
 
 const IntroSection = () => {
   return (
@@ -35,6 +36,9 @@ const IntroSection = () => {
         </ParallaxLayer>
         <ParallaxLayer offset={0} speed={1}>
           <div className="introParallaxLayer" id="img07"></div>
+        </ParallaxLayer>
+        <ParallaxLayer offset={1} speed={0.1}>
+          <DetailPart />
         </ParallaxLayer>
       </Parallax>
     </div>
