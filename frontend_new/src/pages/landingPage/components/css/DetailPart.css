@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Tajawal&display=swap");
+
+.rotatingPartHolder {
+  margin: 10% 0%;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.rotatingPart {
+  overflow: hidden;
+  font-size: 40px;
+  font-weight: 200;
+}
+
+.details {
+  margin: 0% 10%;
+  text-align: justify;
+  font-family: "Tajawal", sans-serif;
+  font-size: 20px;
+}
