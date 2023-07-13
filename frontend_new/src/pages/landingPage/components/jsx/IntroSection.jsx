@@ -1,31 +1,49 @@
-import React, { useState, useEffect } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import React from "react";
+import { Parallax, ParallaxLayer } from "@react-spring/parallax";
+import "./IntroSection.css";
+import "./IntroSectionMedia.css";
+import DetailPart from "./DetailPart";
 
-const RotatingPart = () => {
-  const descriptions = ["Adventure", "Escape", "Quest", "Getaway", "Odyssey"];
-
-  const [ShowId, setShowId] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      ShowId === descriptions.length - 1 ? setShowId(0) : setShowId(ShowId + 1);
-    }, 2495);
-
-    return () => clearInterval(interval);
-  }, [ShowId]);
-
-  const animation = {
-    x: ["0%"],
-    y: ["-100%", "0%", "0%", "100%"],
-    scale: [1],
-    transition: {
-      duration: 2.5,
-      times: [0, 0.25, 0.75, 1],
-      repeat: Infinity,
-    },
-  };
-
-  return <motion.div animate={animation}>{descriptions[ShowId]}</motion.div>;
+const IntroSection = () => {
+  return (
+    <div className="introSection">
+      <Parallax
+        pages={2}
+        style={{ top: "0", left: "0" }}
+        className="introParallax"
+      >
+        <ParallaxLayer offset={0} speed={0.15}>
+          <div className="introParallaxLayer" id="img01"></div>
+        </ParallaxLayer>
+        <ParallaxLayer offset={0} speed={0.75}>
+          <div className="introParallaxLayer" id="img02"></div>
+        </ParallaxLayer>
+        <ParallaxLayer offset={0} speed={0.25}>
+          <div className="introParallaxLayer" id="img03"></div>
+        </ParallaxLayer>
+        <ParallaxLayer offset={0} speed={0.75}>
+          <div className="introParallaxLayer" id="img04"></div>
+        </ParallaxLayer>
+        <ParallaxLayer offset={0} speed={0.55}>
+          <div className="introParallaxLayer" id="img05"></div>
+        </ParallaxLayer>
+        <ParallaxLayer offset={0} speed={0.95}>
+          <div className="introParallaxLayer" id="img06"></div>
+        </ParallaxLayer>
+        <ParallaxLayer offset={0} speed={0.15}>
+          <div className="introParallaxLayer" id="title">
+            <p>TrekLicious</p>
+          </div>
+        </ParallaxLayer>
+        <ParallaxLayer offset={0} speed={1}>
+          <div className="introParallaxLayer" id="img07"></div>
+        </ParallaxLayer>
+        <ParallaxLayer offset={1} speed={0.25}>
+          <DetailPart />
+        </ParallaxLayer>
+      </Parallax>
+    </div>
+  );
 };
 
-export default RotatingPart;
+export default IntroSection;
