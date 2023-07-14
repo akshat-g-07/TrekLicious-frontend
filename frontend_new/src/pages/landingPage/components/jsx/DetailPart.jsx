@@ -1,5 +1,5 @@
 import React from "react";
-import "../css/DetailPart.css";
+import "./DetailPart.css";
 import RotatingPart from "./RotatingPart";
 
 const DetailPart = () => {
@@ -13,7 +13,9 @@ const DetailPart = () => {
         className="bgVideo"
       ></video>
       <div className="detailPart">
-        <div id="title">TrekLicious</div>
+        <div id="title" style={{ marginTop: "10%" }}>
+          TrekLicious
+        </div>
         <div className="rotatingPartHolder">
           <div>is your much needed</div>
           <div className="rotatingPart">
@@ -26,6 +28,10 @@ const DetailPart = () => {
           the world. Immerse yourself in stunning visuals, find comprehensive
           details, and plan your next unforgettable journey. Get ready to embark
           on the trek of a lifetime with Treklicious.
+        </div>
+        <div className="buttonHolder">
+          <button className="button">Sign Up</button>
+          <button className="button">Log In</button>
         </div>
       </div>
     </>
