@@ -32,5 +32,29 @@
   height: 100%;
   width: 100%;
   color: white;
-  text-shadow: 1px 1px 15px black;
+  text-shadow: 1px 1px 12.5px black;
+}
+
+.buttonHolder {
+  display: flex;
+  justify-content: space-between;
+  margin: 5% 20%;
+}
+
+.button {
+  font-size: 20px;
+  border: 2px solid white;
+  border-radius: 7.5%;
+  outline: none;
+  background: transparent;
+  padding: 5%;
+  color: white;
+  transition: all 0.5s;
+}
+
+.button:hover {
+  color: black;
+  background-color: white;
+  border: 2px solid black;
+  scale: 1.25;
 }
