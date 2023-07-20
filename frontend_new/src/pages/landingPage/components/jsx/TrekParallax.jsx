@@ -1,18 +1,13 @@
-import React from "react";
-import "./TrekParallax.css";
+import React from 'react'
+import "./TrekParallax.css"
+import "./TrekParallaxMedia.css"
 
 const TrekParallax = ({ mid, treks, dimension }) => {
-  return (
-    <>
-      <div
-        className={`trekHolder ${dimension}`}
-        style={{ transform: mid && "rotateY(-180deg)" }}
-      >
-        <img src={treks.img} />
-        <p>{treks.name}</p>
-      </div>
-    </>
-  );
-};
+    return (
+        <>
+            <div className={mid ? `trekHolder ${dimension} midLayer` : `trekHolder ${dimension}`}><img src={treks.img} /><p>{treks.name}</p></div>
+        </>
+    )
+}
 
-export default TrekParallax;
+export default TrekParallax
