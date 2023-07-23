@@ -1,60 +1,60 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Tajawal&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tajawal&display=swap');
 
 .rotatingPartHolder {
-  margin: 10% 0%;
-  text-align: center;
-  font-family: "Poppins", sans-serif;
+    margin: 10% 0%;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
 }
 
 .rotatingPart {
-  overflow: hidden;
-  font-size: 40px;
-  font-weight: 200;
+    overflow: hidden;
+    font-size: 40px;
+    font-weight: 200;
 }
 
 .details {
-  margin: 0% 10%;
-  text-align: justify;
-  font-family: "Tajawal", sans-serif;
-  font-size: 20px;
+    margin: 0% 10%;
+    text-align: justify;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 20px;
 }
 
 .bgVideo {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  position: absolute;
-  z-index: -1;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+    z-index: -1;
 }
 
 .detailPart {
-  height: 100%;
-  width: 100%;
-  color: white;
-  text-shadow: 1px 1px 12.5px black;
+    height: 100%;
+    width: 100%;
+    color: white;
+    text-shadow: 1px 1px 12.5px black;
 }
 
 .buttonHolder {
-  display: flex;
-  justify-content: space-between;
-  margin: 5% 20%;
+    display: flex;
+    justify-content: space-between;
+    margin: 5% 20%;
 }
 
 .button {
-  font-size: 20px;
-  border: 2px solid white;
-  border-radius: 7.5%;
-  outline: none;
-  background: transparent;
-  padding: 5%;
-  color: white;
-  transition: all 0.5s;
+    font-size: 20px;
+    border: 2px solid white;
+    border-radius: 10px;
+    outline: none;
+    background: transparent;
+    padding: 5%;
+    color: white;
+    transition: all 0.5s;
 }
 
 .button:hover {
-  color: black;
-  background-color: white;
-  border: 2px solid black;
-  scale: 1.25;
+    color: black;
+    background-color: white;
+    border: 2px solid black;
+    scale: 1.25;
 }
