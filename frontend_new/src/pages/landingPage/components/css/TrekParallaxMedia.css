@@ -56,10 +56,28 @@
     .trekHolder p {
         font-size: 30px;
     }
+
+    .trekHolder:hover {
+        scale: 1;
+    }
+
+    .trekHolder:hover img,
+    .trekHolder:hover p {
+        scale: 1.25;
+    }
 }
 
 @media screen and (min-width:1440px) {
     .trekHolder p {
         font-size: 30px;
+    }
+
+    .trekHolder:hover {
+        scale: 1;
+    }
+
+    .trekHolder:hover img,
+    .trekHolder:hover p {
+        scale: 1.25;
     }
 }
