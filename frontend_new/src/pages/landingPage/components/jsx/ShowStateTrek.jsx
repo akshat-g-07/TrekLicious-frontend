@@ -7,7 +7,7 @@ const ShowStateTrek = ({ stateTrekArray }) => {
             <div className='stateTrekArrayHolder'>
                 {stateTrekArray?.map((trek, index) => {
                     return <div key={index} className='trekHolder Medium statePart'>
-                        <img src={trek.img} style={{ height: "100%", width: "100%" }} />
+                        <img src={trek.img} />
                         <p>{trek.name}</p>
                     </div>
                 })}
