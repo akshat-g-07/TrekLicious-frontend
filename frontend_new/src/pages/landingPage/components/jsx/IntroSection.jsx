@@ -5,11 +5,12 @@ import "../css/IntroSectionMedia.css"
 import DetailPart from './DetailPart'
 import SeasonTrek from './SeasonTrek'
 import StateTrek from './StateTrek'
+import Clients from './Clients'
 
 const IntroSection = () => {
   return (
     <div className='introSection'>
-      <Parallax pages={5} style={{ top: '0', left: '0' }} className='introParallax'>
+      <Parallax pages={6} style={{ top: '0', left: '0' }} className='introParallax'>
         <ParallaxLayer offset={0} speed={0.15}>
           <div className='introParallaxLayer' id="img01"></div>
         </ParallaxLayer>
@@ -40,8 +41,11 @@ const IntroSection = () => {
         <ParallaxLayer sticky={{ start: 2, end: 3 }} speed={0.25} style={{ backgroundColor: "#A1D2CE" }}>
           <SeasonTrek />
         </ParallaxLayer>
-        <ParallaxLayer offset={4} speed={0.25}>
+        <ParallaxLayer offset={4} speed={0.75}>
           <StateTrek />
+        </ParallaxLayer>
+        <ParallaxLayer offset={5} speed={0.5}>
+          <Clients />
         </ParallaxLayer>
       </Parallax>
     </div>
