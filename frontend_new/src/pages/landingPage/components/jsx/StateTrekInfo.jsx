@@ -4,24 +4,26 @@ import "./StateTrekInfo.css";
 import ShowStateTrek from "./ShowStateTrek";
 
 const StateTrekInfo = () => {
+    const numberOfItems = window.innerWidth < 768 ? 3 : 6
 
     const stateList = [... new Set(Treks.map((trek) => { return trek.state }))]
     const firstHalf = stateList.slice(0, 3)
     const secondHalf = stateList.slice(3, 6)
 
-    const [stateName, setStateName] = useState(null)
-    const [stateArray, setStateArray] = useState(null);
-    const numberOfItems = window.innerWidth < 768 ? 3 : 6
+    const [stateName, setStateName] = useState(firstHalf[0])
+    const [stateArray, setStateArray] = useState(Treks.filter((trek) => {
+        return trek.state === stateName
+    }).slice(0, numberOfItems));
 
     function buttonClicked(index) {
         document.querySelector(".clicked")?.classList.remove("clicked")
         document.querySelectorAll(".stateButton")[index].classList.toggle("clicked")
-        setStateName(document.querySelectorAll(".stateButton")[index])
+        setStateName(document.querySelectorAll(".stateButton")[index].innerHTML)
     }
 
     useEffect(() => {
         setStateArray(Treks.filter((trek) => {
-            return trek.state === stateName?.innerHTML;
+            return trek.state === stateName;
         }).slice(0, numberOfItems))
     }, [stateName])
 
@@ -30,7 +32,7 @@ const StateTrekInfo = () => {
             <div className='stateButtonDivHolder'>
                 <div className='stateButtonHolder'>
                     {firstHalf.map((item, index) => {
-                        return <button className="stateButton" key={index} onClick={() => buttonClicked(index)}>{item}</button>
+                        return <button className={index === 0 ? "stateButton clicked" : "stateButton"} key={index} onClick={() => buttonClicked(index)}>{item}</button>
                     })}
                 </div>
                 <div className='stateButtonHolder'>
