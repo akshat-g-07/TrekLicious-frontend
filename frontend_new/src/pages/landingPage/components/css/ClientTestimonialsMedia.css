@@ -28,12 +28,13 @@
 
     .clientQuote:hover span {
         height: auto;
-        width: 45%;
+        width: 175px;
         text-align: justify;
         font-size: 15px;
         scale: 1.25;
         transform-origin: center;
         transform: rotateZ(360deg);
+        margin-top: 25px;
     }
 
     .clientQuote:hover p {
