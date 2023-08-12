@@ -1,35 +1,36 @@
 import React from "react";
-import "../css/DetailPart.css";
 import RotatingPart from "./RotatingPart";
+import SeasonTrekInfo from "./SeasonTrekInfo";
 
-const DetailPart = () => {
+const SeasonTrek = () => {
+  const seasons = ["Summer", "Monsoon", "Winter"];
+
   return (
-    <>
-      <video
-        src="videos/vid01.mp4"
-        muted
-        autoPlay
-        loop
-        className="bgVideo"
-      ></video>
+    <div
+      style={{
+        background: "url('images/BG.jpg')",
+        backgroundSize: "auto 100%",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "top right",
+      }}
+    >
       <div className="detailPart">
-        <div id="title">TrekLicious</div>
+        <div
+          id="title"
+          style={{ textShadow: "1px 1px 12.5px black", marginTop: "0%" }}
+        >
+          TrekLicious
+        </div>
         <div className="rotatingPartHolder">
-          <div>is your much needed</div>
+          <div>for all seasons</div>
           <div className="rotatingPart">
-            <RotatingPart />
+            <RotatingPart descriptions={seasons} />
           </div>
         </div>
-        <div className="details">
-          Welcome to Treklicious, the ultimate destination for adventure
-          seekers. Explore a vast selection of exhilarating treks from around
-          the world. Immerse yourself in stunning visuals, find comprehensive
-          details, and plan your next unforgettable journey. Get ready to embark
-          on the trek of a lifetime with Treklicious.
-        </div>
       </div>
-    </>
+      <SeasonTrekInfo />
+    </div>
   );
 };
 
-export default DetailPart;
+export default SeasonTrek;
