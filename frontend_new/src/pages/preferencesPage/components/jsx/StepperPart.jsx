@@ -45,12 +45,12 @@ function ColorlibStepIcon(props) {
   );
 }
 
-const PreferencePageDesign = () => {
+const PreferencePageDesign = ({ divIndexValue }) => {
   const preferencesCategory = ["State", "Season", "Difficulty"];
 
   return (
     <div style={{ width: "100%" }}>
-      <Stepper activeStep={0}>
+      <Stepper activeStep={divIndexValue}>
         {preferencesCategory.map((label) => (
           <Step key={label}>
             <StepLabel StepIconComponent={ColorlibStepIcon}></StepLabel>
