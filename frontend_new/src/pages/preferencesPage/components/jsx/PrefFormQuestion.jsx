@@ -1,8 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
+import NormalOption from "./NormalOption";
+import OtherOption from "./OtherOption";
 import PreferenceQuestions from "../json/PreferenceQuestions.json";
 import ArrowDropDownCircleIcon from "@mui/icons-material/ArrowDropDownCircle";
-import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import "../css/PrefFormQuestion.css";
 
 const PrefFormQuestion = ({
@@ -46,66 +47,32 @@ const PrefFormQuestion = ({
               className="option"
               key={index}
               onClick={() => {
-                optionDivClicked(index);
+                option !== "Other:" &&
+                  (() => {
+                    document.querySelector("#autocompleteValue") &&
+                      (document.querySelector("#autocompleteValue").value =
+                        null);
+                    optionDivClicked(index);
+                  })();
               }}
             >
               <ArrowDropDownCircleIcon id="optionIcon" />
 
-              {divIndex === 0 ? (
-                <span
-                  className={
-                    option === prefState
-                      ? "optionSpan selectedOptionSpan"
-                      : "optionSpan"
-                  }
-                >
-                  {option}
-                </span>
-              ) : divIndex === 1 ? (
-                <span
-                  className={
-                    option === prefSeason
-                      ? "optionSpan selectedOptionSpan"
-                      : "optionSpan"
-                  }
-                >
-                  {option}
-                </span>
-              ) : (
-                <span
-                  className={
-                    option === prefDifficulty
-                      ? "optionSpan selectedOptionSpan"
-                      : "optionSpan"
-                  }
-                >
-                  {option}
-                </span>
+              {option !== "Other:" && (
+                <NormalOption
+                  divIndexValue={divIndex}
+                  prefStateValue={prefState}
+                  prefSeasonValue={prefSeason}
+                  prefDifficultyValue={prefDifficulty}
+                  optionValue={option}
+                />
               )}
 
-              {divIndex === 0 ? (
-                <CheckCircleIcon
-                  className={
-                    option === prefState
-                      ? "checkIcon showCheckIcon"
-                      : "checkIcon"
-                  }
-                />
-              ) : divIndex === 1 ? (
-                <CheckCircleIcon
-                  className={
-                    option === prefSeason
-                      ? "checkIcon showCheckIcon"
-                      : "checkIcon"
-                  }
-                />
-              ) : (
-                <CheckCircleIcon
-                  className={
-                    option === prefDifficulty
-                      ? "checkIcon showCheckIcon"
-                      : "checkIcon"
-                  }
+              {option === "Other:" && (
+                <OtherOption
+                  prefStateValue={prefState}
+                  optionValue={option}
+                  indexValue={index}
                 />
               )}
             </motion.div>
