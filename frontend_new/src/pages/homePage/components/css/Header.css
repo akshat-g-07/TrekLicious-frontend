@@ -1,0 +1,63 @@
+.headerClass {
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transition: all 0.7s ease;
+    background: linear-gradient(#5D9CEC 0%, #2D6BBC 10%, #111 20%, #555 30%) fixed;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 75px;
+    background-position-y: -200px;
+    box-sizing: border-box;
+
+    &.day {
+        background-position-y: -10px;
+        text-shadow: 1px 1px 10px white;
+    }
+}
+
+.headerTitle {
+    text-align: left;
+    display: flex;
+    align-items: center;
+    font-family: 'Alegreya SC', serif;
+    font-size: 50px;
+}
+
+.switchClass {
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    margin-top: 7.5px;
+    transform: translateY(-150px);
+    transition: all 0.7s ease;
+    color: #FFF3D8;
+
+    &.day {
+        transform: translateY(10px);
+        color: #FFCE54;
+    }
+}
+
+.MuiPaper-root.MuiMenu-paper.day {
+    background-color: #2c2c2c;
+    color: white;
+}
+
+.MuiSvgIcon-root.MuiSvgIcon-fontSizeSmall.css-ptiqhd-MuiSvgIcon-root {
+    &.day {
+        color: rgba(255, 255, 255, 0.75);
+    }
+
+    &:hover {
+        color: rgba(255, 255, 255, 1);
+    }
+}
+
+.MuiDivider-root.MuiDivider-fullWidth.css-9mgopn-MuiDivider-root {
+    &.day {
+        border-color: white;
+    }
+}
