@@ -61,3 +61,28 @@
         border-color: white;
     }
 }
+
+.searchHolder {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    transition: all 0.7s ease;
+    transform: translateX(90%);
+    box-sizing: border-box;
+
+    &.expanded {
+        border: 2px solid black;
+        background-color: #817878a4;
+        transform: translateX(0%);
+        box-shadow: 2px 2px 15px black;
+    }
+}
+
+.searchIcon {
+    cursor: pointer;
+    margin-right: 10px;
+
+    &.day {
+        color: white
+    }
+}
