@@ -17,6 +17,8 @@ const Header = () => {
                         document.querySelector(".headerClass").classList.toggle("day")
                         document.querySelector(".switchClass").classList.toggle("day")
                         document.querySelector(".searchIcon").classList.toggle("day")
+                        document.querySelector(".mainDivName").classList.toggle("day")
+                        document.querySelector(".mainDivDesc").classList.toggle("day")
                     }}>
                         <Switch />
                     </div>
