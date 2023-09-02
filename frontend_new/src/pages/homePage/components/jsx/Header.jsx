@@ -1,10 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Switch from './Switch';
 import ProfileIcon from './ProfileIcon';
 import SearchBox from './SearchBox';
 import "../css/Header.css"
 
 const Header = () => {
+
+    useEffect(() => {
+        const onScroll = () => {
+            window.scrollY > 0 ? document.querySelector(".headerClass").classList.remove("notScrolled") : document.querySelector(".headerClass").classList.add("notScrolled")
+        };
+
+        window.addEventListener("scroll", onScroll);
+
+        return () => window.removeEventListener("scroll", onScroll);
+    }, [window.scroll]);
+
     return (
         <>
             <header className='headerClass day'>
@@ -17,8 +28,6 @@ const Header = () => {
                         document.querySelector(".headerClass").classList.toggle("day")
                         document.querySelector(".switchClass").classList.toggle("day")
                         document.querySelector(".searchIcon").classList.toggle("day")
-                        document.querySelector(".mainDivName").classList.toggle("day")
-                        document.querySelector(".mainDivDesc").classList.toggle("day")
                     }}>
                         <Switch />
                     </div>
