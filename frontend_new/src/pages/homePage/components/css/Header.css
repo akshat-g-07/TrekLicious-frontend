@@ -8,13 +8,17 @@
     background: linear-gradient(#5D9CEC 0%, #2D6BBC 10%, #111 20%, #555 30%) fixed;
     display: flex;
     justify-content: space-between;
-    padding: 5px 75px;
+    padding: 5px 75px 5px 50px;
     background-position-y: -200px;
     box-sizing: border-box;
 
     &.day {
         background-position-y: -10px;
         text-shadow: 1px 1px 10px white;
+    }
+
+    &.notScrolled {
+        background: linear-gradient(rgba(93, 156, 236, 0.2) 0%, rgba(45, 107, 188, 0.2) 10%, rgba(17, 17, 17, 0.2) 20%, rgba(85, 85, 85, 0.2) 30%) fixed;
     }
 }
 
