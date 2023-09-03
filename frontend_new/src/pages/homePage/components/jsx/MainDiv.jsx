@@ -14,16 +14,18 @@ const MainDiv = () => {
             <div className='mainDivClass'>
                 <video src="videos/vid02.mp4" muted autoPlay loop className='bgVideo'></video>
                 <div className='mainDivHolder'>
-                    <div className='mainDivName'>
-                        {trek.name}
-                    </div>
-                    <div className='mainDivDesc'>
-                        {trek.description}
-                    </div>
-                    <div className='mainDivButton'>
-                        <Button variant="contained" startIcon={<InfoIcon />} sx={{ backgroundColor: "#5D5A58" }}>
-                            More Info
-                        </Button>
+                    <div style={{ position: "relative", top: "20%", marginLeft: "50px", marginRight: "20px" }}>
+                        <div className='mainDivName'>
+                            {trek.name}
+                        </div>
+                        <div className='mainDivDesc'>
+                            {trek.description}
+                        </div>
+                        <div className='mainDivButton'>
+                            <Button variant="contained" startIcon={<InfoIcon />} sx={{ backgroundColor: "#5D5A58" }}>
+                                More Info
+                            </Button>
+                        </div>
                     </div>
                 </div>
             </div>
