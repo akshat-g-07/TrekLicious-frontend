@@ -1,14 +1,12 @@
 .mainDivClass {
     width: 100vw;
     height: 100vh;
-    /* background-color: red; */
 }
 
 .mainDivHolder {
-    position: absolute;
-    top: 25%;
-    width: 40%;
-    margin-left: 5%;
+    width: 30%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.2));
+    height: 98%;
 }
 
 .mainDivName {
@@ -17,11 +15,6 @@
     cursor: default;
     color: white;
     text-shadow: 2px 2px 10px black;
-
-    &.day {
-        color: black;
-        text-shadow: 2px 2px 10px white;
-    }
 }
 
 .mainDivDesc {
@@ -32,9 +25,4 @@
     cursor: default;
     color: white;
     text-shadow: 2px 2px 10px black;
-
-    &.day {
-        color: black;
-        text-shadow: 1px 1px 15px white;
-    }
 }
