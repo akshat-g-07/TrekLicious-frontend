@@ -1,15 +1,16 @@
 import React from 'react'
 import GeneralSection from './GeneralSection';
-import Treks from "../../../landingPage/components/Treks.json"
+import RecommendedSection from './RecommendedSection';
+import ComponentGenerator from "../js/ComponentGenerator"
 
 const RestBody = () => {
-    const Trek = Treks.filter(trek => { return (trek.state === "Uttarakhand" || trek.season === "Summer" || trek.difficulty === "Easy") })
-    const sectionHeadValue = "Recommended For You";
-    const sectionArrayValue = Trek.sort(() => Math.random() - 0.5).slice(0, 10);
-
+    const trekDetailComponents = ComponentGenerator();
     return (
         <>
-            <GeneralSection sectionHead={sectionHeadValue} sectionArray={sectionArrayValue} />
+            <RecommendedSection />
+            {trekDetailComponents.map((trek, index) => {
+                return <GeneralSection key={index} sectionHead={trek.sectionHeadValue} sectionArray={trek.sectionArrayValue} />
+            })}
         </>
     )
 }
