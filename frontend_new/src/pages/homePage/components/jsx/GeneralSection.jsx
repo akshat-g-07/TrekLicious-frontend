@@ -3,45 +3,46 @@ import { motion } from 'framer-motion';
 import "../css/GeneralSection.css"
 
 const GeneralSection = ({ sectionHead, sectionArray }) => {
-    console.log(sectionArray)
     return (
         <>
             <div className="generalSection">
                 <div className="sectionHeader">
-                    {sectionHead}
+                    <p>{sectionHead}</p>
                 </div>
                 <div className="sectionBodyHolder">
                     <div className="sectionBody">
                         {sectionArray.map((trek, index) => {
                             return <motion.div key={index} className='sectionBodyItem'
                                 onHoverStart={() => {
-                                    document.querySelectorAll(".trekHolder")[index].style.transitionDelay = "0s";
-                                    document.querySelectorAll(".trekHolder img")[index].style.transitionDelay = "0s";
-                                    document.querySelectorAll(".trekHolder p")[index].style.transitionDelay = "0s";
-                                    document.querySelectorAll(".trekHolder")[index].classList.add("trekHolderHover");
-                                    document.querySelectorAll(".trekHolder img")[index].classList.add("trekHolderHoverImgP");
-                                    document.querySelectorAll(".trekHolder p")[index].classList.add("trekHolderHoverImgP");
-                                    document.querySelectorAll(".sectionBodyExpand")[index].style.transitionDelay = "0.5s";
-                                    document.querySelectorAll(".sectionBodyExpand")[index].classList.add("open");
+                                    const sectionHeadValue = sectionHead.replace(/\W/g, "\\$&")
+                                    document.querySelector("#" + sectionHeadValue + "_" + index + "_trekHolder").style.transitionDelay = "0s";
+                                    document.querySelector("#" + sectionHeadValue + "_" + index + "_img").style.transitionDelay = "0s";
+                                    document.querySelector("#" + sectionHeadValue + "_" + index + "_p").style.transitionDelay = "0s";
+                                    document.querySelector("#" + sectionHeadValue + "_" + index + "_trekHolder").classList.add("trekHolderHover");
+                                    document.querySelector("#" + sectionHeadValue + "_" + index + "_img").classList.add("trekHolderHoverImgP");
+                                    document.querySelector("#" + sectionHeadValue + "_" + index + "_p").classList.add("trekHolderHoverImgP");
+                                    document.querySelector("#" + sectionHeadValue + "_" + index + "_sectionBodyExpand").style.transitionDelay = "0.5s";
+                                    document.querySelector("#" + sectionHeadValue + "_" + index + "_sectionBodyExpand").classList.add("open");
                                 }}
                                 onHoverEnd={() => {
-                                    document.querySelectorAll(".trekHolder")[index].style.transitionDelay = "0.5s";
-                                    document.querySelectorAll(".trekHolder img")[index].style.transitionDelay = "0.5s";
-                                    document.querySelectorAll(".trekHolder p")[index].style.transitionDelay = "0.5s";
-                                    document.querySelectorAll(".trekHolder")[index].classList.remove("trekHolderHover");
-                                    document.querySelectorAll(".trekHolder img")[index].classList.remove("trekHolderHoverImgP");
-                                    document.querySelectorAll(".trekHolder p")[index].classList.remove("trekHolderHoverImgP");
-                                    document.querySelectorAll(".sectionBodyExpand")[index].style.transitionDelay = "0s";
-                                    document.querySelectorAll(".sectionBodyExpand")[index].classList.remove("open")
+                                    const sectionHeadValue = sectionHead.replaceAll(/\W/g, "\\$&")
+                                    document.querySelector("#" + sectionHeadValue + "_" + index + "_trekHolder").style.transitionDelay = "0.5s";
+                                    document.querySelector("#" + sectionHeadValue + "_" + index + "_img").style.transitionDelay = "0.5s";
+                                    document.querySelector("#" + sectionHeadValue + "_" + index + "_p").style.transitionDelay = "0.5s";
+                                    document.querySelector("#" + sectionHeadValue + "_" + index + "_trekHolder").classList.remove("trekHolderHover");
+                                    document.querySelector("#" + sectionHeadValue + "_" + index + "_img").classList.remove("trekHolderHoverImgP");
+                                    document.querySelector("#" + sectionHeadValue + "_" + index + "_p").classList.remove("trekHolderHoverImgP");
+                                    document.querySelector("#" + sectionHeadValue + "_" + index + "_sectionBodyExpand").style.transitionDelay = "0s";
+                                    document.querySelector("#" + sectionHeadValue + "_" + index + "_sectionBodyExpand").classList.remove("open")
                                 }}
                                 whileTap={{
                                     scale: 0.9
                                 }}>
-                                <div className="trekHolder large sectionImg">
-                                    <img src={trek.img} />
-                                    <p>{trek.name}</p>
+                                <div id={sectionHead + "_" + index + "_trekHolder"} className="trekHolder large sectionImg">
+                                    <img id={sectionHead + "_" + index + "_img"} src={trek.img} />
+                                    <p id={sectionHead + "_" + index + "_p"} >{trek.name}</p>
                                 </div>
-                                <div className="sectionBodyExpand">
+                                <div id={sectionHead + "_" + index + "_sectionBodyExpand"} className="sectionBodyExpand">
                                     {trek.description}
                                 </div>
                             </motion.div>
