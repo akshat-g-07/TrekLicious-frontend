@@ -8,7 +8,7 @@ const Header = () => {
 
     useEffect(() => {
         const onScroll = () => {
-            window.scrollY > 0 ? document.querySelector(".headerClass").classList.remove("notScrolled") : document.querySelector(".headerClass").classList.add("notScrolled")
+            window.pageYOffset === 0 ? document.querySelector(".headerClass").classList.remove("scrolled") : document.querySelector(".headerClass").classList.add("scrolled")
         };
 
         window.addEventListener("scroll", onScroll);
