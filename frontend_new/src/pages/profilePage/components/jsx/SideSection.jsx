@@ -1,9 +1,12 @@
 import React from 'react';
+import Button from '@mui/material/Button';
+import ForwardIcon from '@mui/icons-material/Forward';
 import "../css/SideSection.css"
 
 const SideSection = () => {
     return (
         <>
+            <Button variant="outlined" sx={{ position: "fixed", top: "5%", left: "10%" }} startIcon={<ForwardIcon sx={{ transform: "rotateZ(180deg)" }} />}>Back</Button>
             <div className="sideSectionHolder">
                 <div className="profileSide sideSelected" onClick={() => {
                     document.querySelector(".favoriteSide").classList.remove("sideSelected")
