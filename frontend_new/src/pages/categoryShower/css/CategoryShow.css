@@ -1,0 +1,18 @@
+.categoryShow {
+    height: auto;
+    width: 100%;
+    padding: 50px;
+    box-sizing: border-box;
+    background-image: url("../../../../public/images/Deoriatal_Chandrashila.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-size: cover;
+}
+
+.categoryBody {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    gap: 50px 0px;
+}
