@@ -6,7 +6,7 @@ const Clients = () => {
         <>
             <div style={{ color: "black" }}>
                 <div id="title" style={{ textShadow: "1px 1px 12.5px black", marginTop: window.innerWidth > 1023 ? "0.5%" : "10%" }}>
-                    TrekLicious
+                    TrekLicious...
                 </div>
                 <div className='rotatingPartHolder'>
                     <div>for all!</div>
