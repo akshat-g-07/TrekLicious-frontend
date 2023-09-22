@@ -11,7 +11,7 @@ const IntroSection = () => {
   return (
     <div className='introSection'>
       <Parallax pages={6} style={{ top: '0', left: '0' }} className='introParallax'>
-        <ParallaxLayer offset={0} speed={0.15}>
+        <ParallaxLayer offset={0} speed={0.16}>
           <div className='introParallaxLayer' id="img01"></div>
         </ParallaxLayer>
         <ParallaxLayer offset={0} speed={0.75}>
