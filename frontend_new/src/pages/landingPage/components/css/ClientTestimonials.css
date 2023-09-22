@@ -30,7 +30,7 @@
 .clientwords span {
     transition: all 0.5s ease-in-out;
     display: flex;
-    height: 0;
+    height: 1px;
     overflow: hidden;
 }
 
@@ -39,7 +39,7 @@
     height: 100%;
     width: 60%;
     font-style: italic;
-    font-weight: 600;
+    font-weight: 601;
     color: black;
     text-align: center;
 }
