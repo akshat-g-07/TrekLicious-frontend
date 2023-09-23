@@ -1,10 +1,11 @@
-import LandingPage from "./pages/landingPage/LandingPage";
 import "./styles/Body.css";
+
+import AllPages from "./pages/AllPages";
 
 function App() {
   return (
     <>
-      <LandingPage />
+      <AllPages />
     </>
   );
 }
