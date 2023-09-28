@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import "../css/LogInPageDesign.css";
+import { Link } from "react-router-dom";
 
 const LogInPageDesign = () => {
   const toggleOpacity = (elementID) => {
@@ -61,7 +62,9 @@ const LogInPageDesign = () => {
         </div>
         <div className="belowForm">
           <p>Don't have one? Create Now:</p>
-          <button className="logInPageButton">Sign Up</button>
+          <Link to={"/signup"}>
+            <button className="logInPageButton">Sign Up</button>
+          </Link>
         </div>
       </div>
     </>
