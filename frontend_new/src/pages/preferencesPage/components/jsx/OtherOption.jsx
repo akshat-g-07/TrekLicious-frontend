@@ -13,46 +13,52 @@ const OtherOption = ({ prefStateValue, optionValue, indexValue }) => {
 
     return (
         <>
-            {<span className={dropOptions.includes(prefStateValue) ? "optionSpan selectedOptionSpan" : "optionSpan"}>{optionValue}</span>}
+            <span className={dropOptions.includes(prefStateValue) ? "optionSpan selectedOptionSpan" : "optionSpan"}>{optionValue}</span>
 
-            {
-                <div style={{ marginLeft: "10px", width: "50%", alignItems: "center", display: "flex", color: "white" }}>
-                    <Autocomplete
-                        sx={{
-                            width: "100%",
-                            '& .MuiInput-root':
-                            {
-                                color: 'white',
-                                "& .MuiSvgIcon-root": {
-                                    color: "white",
+
+            <div style={{ marginLeft: "10px", width: "50%", alignItems: "center", display: "flex", color: "white" }}>
+                <Autocomplete
+                    sx={{
+                        width: "100%",
+                        '& .MuiInput-root':
+                        {
+                            color: 'white',
+                            "& .MuiSvgIcon-root": {
+                                color: "white",
+                            },
+                            "&::before": {
+                                borderBottom: "1px solid rgba(255,255,255,0.8)"
+                            },
+                            "&:hover": {
+                                borderBottom: "1px solid rgba(255,255,255,0.4)",
+                                '&:not(.Mui-disabled, .Mui-error)::before': {
+                                    borderBottom: '0px',
                                 },
-                                "&::before": {
-                                    borderBottom: "1px solid rgba(255,255,255,0.4)"
-                                },
-                                "&:hover": {
-                                    borderBottom: "1px solid rgba(255,255,255,0.8)"
-                                }
+                            },
+                            "&::after": {
+                                borderBottom: "2px solid rgba(255,255,255,1)"
                             }
-                        }}
-                        id="autocompleteValue"
-                        defaultValue={dropOptions.includes(prefStateValue) ? prefStateValue : null}
-                        options={dropOptions}
-                        onChange={(event, value) => {
-                            document.querySelector(".showCheckIcon")?.classList.remove("showCheckIcon")
-                            document.querySelector(".selectedOptionSpan")?.classList.remove("selectedOptionSpan")
-                            value && (() => {
-                                document.querySelectorAll(".checkIcon")[indexValue].classList.add("showCheckIcon");
-                                document.querySelectorAll(".optionSpan")[indexValue].classList.add("selectedOptionSpan");
-                            })()
-                        }}
-                        renderInput={(params) => (
-                            <TextField {...params} variant="standard" />
-                        )}
-                    />
-                </div>
-            }
+                        }
+                    }}
+                    id="autocompleteValue"
+                    defaultValue={dropOptions.includes(prefStateValue) ? prefStateValue : null}
+                    options={dropOptions}
+                    onChange={(event, value) => {
+                        document.querySelector(".showCheckIcon")?.classList.remove("showCheckIcon")
+                        document.querySelector(".selectedOptionSpan")?.classList.remove("selectedOptionSpan")
+                        value && (() => {
+                            document.querySelectorAll(".checkIcon")[indexValue].classList.add("showCheckIcon");
+                            document.querySelectorAll(".optionSpan")[indexValue].classList.add("selectedOptionSpan");
+                        })()
+                    }}
+                    renderInput={(params) => (
+                        <TextField {...params} variant="standard" />
+                    )}
+                />
+            </div>
 
-            {<CheckCircleIcon className={dropOptions.includes(prefStateValue) ? "checkIcon showCheckIcon" : "checkIcon"} />}
+
+            <CheckCircleIcon className={dropOptions.includes(prefStateValue) ? "checkIcon showCheckIcon" : "checkIcon"} />
         </>
     )
 
