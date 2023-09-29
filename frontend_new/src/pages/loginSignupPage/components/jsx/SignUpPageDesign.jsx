@@ -6,6 +6,7 @@ import Avatar from "react-avatar-edit";
 import Dialog from "@mui/material/Dialog";
 import DialogTitle from "@mui/material/DialogTitle";
 import Button from "@mui/material/Button";
+import { Link } from "react-router-dom";
 
 const SignUpPageDesign = () => {
   const [dialogBox, setDialogBox] = useState(false);
@@ -128,7 +129,9 @@ const SignUpPageDesign = () => {
         </div>
         <div className="belowForm">
           <p>Already Have one?</p>
-          <button className="logInPageButton">Log In</button>
+          <Link to={"/login"}>
+            <button className="logInPageButton">Log In</button>
+          </Link>
         </div>
       </div>
     </>
