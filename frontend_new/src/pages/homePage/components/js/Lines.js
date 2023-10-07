@@ -9,10 +9,10 @@ const seasonLines = [
 const stateLines = [
     "Embark A Memorable Trek ",
     "Journey Through Diverse Terrains Of ",
-    "Explore The Hidden Treasures Of ",
+    "Explore The Hidden Treasures of ",
     "Shall We Discover ",
     "Create Memories In ",
-    "Do Some Adventure In ",
+    "Do Some Adventures In ",
     "This Is Time For "
 ]
 
