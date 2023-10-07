@@ -15,7 +15,7 @@ const CategoryShow = () => {
         <>
             <div className="categoryShow">
                 <div className="categoryHead">
-                    The Line passed:
+                    The Line passed is:
                 </div>
                 <div className="categoryBody">
                     {trekArray.map((trek, index) => {
