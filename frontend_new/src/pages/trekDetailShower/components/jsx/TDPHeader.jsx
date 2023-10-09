@@ -1,15 +1,15 @@
-import React from 'react';
-import "../css/TDPHeader.css"
+import React from "react";
+import "../css/TDPHeader.css";
 
-const TDPHeader = () => {
-    const src = "images/Roopkund.jpg"
-    return (
-        <>
-            <div className="tdpHeader">
-                <img src={src} />
-            </div>
-        </>
-    )
-}
+const TDPHeader = ({ imgSrc }) => {
+  console.log("02", imgSrc);
+  return (
+    <>
+      <div className="tdpHeader">
+        <img src={"/" + imgSrc} />
+      </div>
+    </>
+  );
+};
 
-export default TDPHeader
+export default TDPHeader;
